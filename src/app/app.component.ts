@@ -11,8 +11,9 @@ export class AppComponent implements OnInit {
   updateDatabase(value){
     console.log(value); 
   } 
- 
-  ngOnInit(){
+
+  connectBluetooth(){
+
     let bluetoothNavigator: any = window.navigator;
     if(bluetoothNavigator && bluetoothNavigator.bluetooth){
       bluetoothNavigator.bluetooth.requestDevice({acceptAllDevices:true}).then((device) => {
@@ -20,6 +21,9 @@ export class AppComponent implements OnInit {
       });
 
     }
-     
+    
+  }
+ 
+  ngOnInit(){   
   }
 }
